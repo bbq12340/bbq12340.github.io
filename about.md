@@ -9,4 +9,4 @@ What's up y'all! My name is Jaehyuk David Jang but most people call me by the in
 
 ### Contact me
 
-[email@domain.com](mailto:bbq12340@hotmail.com)
+[bbq12340@hotmail.com](mailto:bbq12340@hotmail.com)
