@@ -40,24 +40,27 @@
             <p class="site-description">{{ site.description }}</p>
           </div>
 
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <div id="post-category">
-              <a href="{{ site.baseurl }}/posts">Posts</a>
-              <ul>
-                <li>
-                  <a href="{{ site.baseurl }}/posts/reviews">Paper Reviews</a>
-                </li>
-                <li>
-                  <a href="{{ site.baseurl }}/posts/projects">Projects</a>
-                </li>
-                <li>
-                  <a href="{{ site.baseurl }}/posts/others">Others</a>
-                </li>
-              </ul>
-            </div>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item" id="site-category">
+                <a class="nav-link" href="/posts">Posts</a>
+                <ul>
+                  <li><a href="/posts/reviews">Paper Reviews</a></li>
+                  <li><a href="/posts/projects">Projects</a></li>
+                  <li><a href="/posts/others">Others</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+            </ul>
+          </div>
         </header>
       </div>
     </div>
