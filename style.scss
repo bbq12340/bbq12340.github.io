@@ -273,6 +273,18 @@ nav {
     /*left:0;*/
   }
 
+  #post-category ul li {
+    display: block;
+    float: none;
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+  }
+
+  #post-category ul:hover li a {
+    background: none;
+  }
+
   #post-category a:hover {
     background: rgb(71, 71, 71);
     color: #ffffff;
@@ -281,6 +293,23 @@ nav {
 
   #post-category:hover ul {
     display: block;
+  }
+
+  #post-category ul a {
+    display: block;
+    height: 50px;
+    font-size: 12px;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px 10px 0px 20px;
+    text-align: left;
+  }
+
+  #navbarResponsive ul a:hover {
+    background: rgb(71, 71, 71);
+    border: 0px;
+    color: #ffffff;
+    text-decoration: none;
   }
 }
 
