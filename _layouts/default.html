@@ -44,7 +44,14 @@
 
           <nav>
             <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/posts">Posts</a>
+            <div id="post-category">
+              <a href="{{ site.baseurl }}/posts">Posts</a>
+              <ul>
+                <li><a href="{{ site.baseurl }}/posts/reviews">Paper Reviews</a></li>
+                <li><a href="{{ site.baseurl }}/posts/projects">Projects</a></li>
+                <li><a href="{{ site.baseurl }}/posts/others">Others</a></li>
+              </ul>
+            </div>
             <a href="{{ site.baseurl }}/about">About</a>
           </nav>
         </header>
