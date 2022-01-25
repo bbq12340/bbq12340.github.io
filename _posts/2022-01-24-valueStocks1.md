@@ -3,7 +3,7 @@ layout: post
 title: In the Search of Value Stocks in Korean Market pt. 1
 ---
 # Introduction
-Thanks to the Fed rate hikes announcements, my stock portfolio has been going through some critical crisis these days and is still on going now. I have altered most of my investments to some relatively safe assets such as Dollars and ETFs, but still am bleeding from previous drops. Before the FOMC announcement which will be taken in few days, I have been trying to discover some value stocks that hopefully will be less painful to hold onto compared to growth stocks. Also, considering the ongoing inflation, I am expecting some of ranging chart until this May or June. Therefore, I think this is a perfect time to find a company that has been undervalued but also having the potential momentum (growth) in the marketplace.
+Thanks to the Fed rate hikes announcements and quantitative easing, my stock portfolio has been going through some critical crisis these days and is still on going now. I have altered most of my investments to some relatively safe assets such as Dollars and ETFs, but still am bleeding from previous drops. Before the FOMC announcement which will be taken in few days, I have been trying to discover some value stocks that hopefully will be less painful to hold onto compared to growth stocks. Also, considering the ongoing inflation, I am expecting some of ranging chart until this May or June. Therefore, I think this is a perfect time to find a company that has been undervalued but also having the potential momentum (growth) in the marketplace.
 
 # Strategy
 I have been following Benjamin Graham's work for a quite a long time who has been emphasizing defensive investment strategy and I believe this is the time his theory is about to shine. He defined the 'value stocks' as the ones that have high dividends with low PER and PBR. Since I don't have accurate ratio of how much 'high' or 'low' it is, I earned some advices from a trader, [Jin Han Bae](https://www.youtube.com/channel/UCu2R3TCLSxYV8pRyBGNOh2g), who is currently considered one of the best ones in Korean stock market. Apparently, there is a 5x5x5 technique and the numbers indicate the condition for each variables above. To be more specific, PER should be lower than 5, PBR lower than 0.5 and the dividend yield rate higher 5%.
@@ -72,28 +72,28 @@ for c in codes:
 pd.DataFrame(data=d).to_csv('irData.csv', encoding='utf-8-sig', index=False)
 ```
 These is the top results of the chart.
-|code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|
-|---|---|---|---|---|---|---|---|
-|009770|삼정펄프|SAMJUNGPULP|KOSPI|가정용품|49.27|0.34|3.57%|
-|044480|블루베리|Blueberry NFT|KOSDAQ|가정용품|N/A|1.76|0.00%|
-|203690|프로스테믹스|Prostemics|KOSDAQ|가정용품|N/A|5.46|0.00%|
-|012690|모나리자|Monalisa|KOSPI|가정용품|40.60|1.83|2.02%|
-|318410|비비씨|BBC|KOSDAQ|가정용품|13.45|1.06|0.00%|
+|code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
+|---|---|---|---|---|---|---|---|  
+|009770|삼정펄프|SAMJUNGPULP|KOSPI|가정용품|49.27|0.34|3.57%|  
+|044480|블루베리|Blueberry NFT|KOSDAQ|가정용품|N/A|1.76|0.00%|  
+|203690|프로스테믹스|Prostemics|KOSDAQ|가정용품|N/A|5.46|0.00%|  
+|012690|모나리자|Monalisa|KOSPI|가정용품|40.60|1.83|2.02%|  
+|318410|비비씨|BBC|KOSDAQ|가정용품|13.45|1.06|0.00%|  
 
 Through some manipulation and subsetting, the data has been cleaned as following.
-|code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|
-|---|---|---|---|---|---|---|---|
-|000700|유수홀딩스|Eusu Holdings|KOSPI|항공화물운송과물|1.61|0.43|9.04|
-|001270|부국증권|BookookSecu|KOSPI|증권|3.79,|0.33|5.01|
-|001750|한양증권|HanyangSecu|KOSPI|증권|2.62|0.4|,5.1|
-|001275|부국증권|BookookSecu|KOSPI|증권|3.79,|0.33|5.01|
-|003540|대신증권|DaishinSecu|KOSPI|증권|2.32,|0.44|7.04|
-|003547|대신증권|DaishinSecu|KOSPI|증권|2.32,|0.44|7.04|
-|030610|교보증권|KYOBOSECURITIES|KOSPI|증권|3.22,|0.37|5.63|
-|001500|현대차증권|HMSEC|KOSPI|증권|4.73|0.38|5.95|
-|003545|대신증권|DaishinSecu|KOSPI|증권|2.32,|0.44|7.04|
-|001755|한양증권|HanyangSecu|KOSPI|증권|2.62|0.4|,5.1|
-|025000|KPX케미칼|KPXCHEMICAL|KOSPI|화학|4.32|0.45|5.23|
+|code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
+|---|---|---|---|---|---|---|---|  
+|000700|유수홀딩스|Eusu Holdings|KOSPI|항공화물운송과물|1.61|0.43|9.04|  
+|001270|부국증권|BookookSecu|KOSPI|증권|3.79,|0.33|5.01|  
+|001750|한양증권|HanyangSecu|KOSPI|증권|2.62|0.4|,5.1|  
+|001275|부국증권|BookookSecu|KOSPI|증권|3.79,|0.33|5.01|  
+|003540|대신증권|DaishinSecu|KOSPI|증권|2.32,|0.44|7.04|  
+|003547|대신증권|DaishinSecu|KOSPI|증권|2.32,|0.44|7.04|  
+|030610|교보증권|KYOBOSECURITIES|KOSPI|증권|3.22,|0.37|5.63|  
+|001500|현대차증권|HMSEC|KOSPI|증권|4.73|0.38|5.95|  
+|003545|대신증권|DaishinSecu|KOSPI|증권|2.32,|0.44|7.04|  
+|001755|한양증권|HanyangSecu|KOSPI|증권|2.62|0.4|,5.1|  
+|025000|KPX케미칼|KPXCHEMICAL|KOSPI|화학|4.32|0.45|5.23|  
 Something interesting is that we can see that the finance sector covers up most of the stocks as above. Plus, there is none of the stocks that are up on KOSDAQ which kind of explains the insecurity of the small companies. However, I think this is way too ignorant to invest in these stocks and not considering other factors.
 
 # Future Direction
