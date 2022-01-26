@@ -74,7 +74,7 @@ pd.DataFrame(data=d).to_csv('irData.csv', encoding='utf-8-sig', index=False)
 These is the top results of the chart.
 
 |code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
-|---|---|---|---|---|---|---|---|  
+|----|----|-------|------|------|-------|-------|------------|  
 |009770|삼정펄프|SAMJUNGPULP|KOSPI|가정용품|49.27|0.34|3.57%|  
 |044480|블루베리|Blueberry NFT|KOSDAQ|가정용품|N/A|1.76|0.00%|  
 |203690|프로스테믹스|Prostemics|KOSDAQ|가정용품|N/A|5.46|0.00%|  
@@ -84,7 +84,7 @@ These is the top results of the chart.
 Through some manipulation and subsetting, the data has been cleaned as following.
 
 |code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
-|---|---|---|---|---|---|---|---|  
+|----|----|-------|------|------|-------|-------|------------|  
 |000700|유수홀딩스|Eusu Holdings|KOSPI|항공화물운송과물|1.61|0.43|9.04|  
 |001270|부국증권|BookookSecu|KOSPI|증권|3.79,|0.33|5.01|  
 |001750|한양증권|HanyangSecu|KOSPI|증권|2.62|0.4|,5.1|  
