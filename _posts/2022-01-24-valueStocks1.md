@@ -73,6 +73,11 @@ pd.DataFrame(data=d).to_csv('irData.csv', encoding='utf-8-sig', index=False)
 ```
 These is the top results of the chart.
 
+<style>
+td, th {
+   border: !important;
+}
+</style>
 |code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
 |----|----|-------|------|------|-------|-------|------------|  
 |009770|삼정펄프|SAMJUNGPULP|KOSPI|가정용품|49.27|0.34|3.57%|  
