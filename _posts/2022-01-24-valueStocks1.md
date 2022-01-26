@@ -72,6 +72,7 @@ for c in codes:
 pd.DataFrame(data=d).to_csv('irData.csv', encoding='utf-8-sig', index=False)
 ```
 These is the top results of the chart.
+
 |code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
 |---|---|---|---|---|---|---|---|  
 |009770|삼정펄프|SAMJUNGPULP|KOSPI|가정용품|49.27|0.34|3.57%|  
@@ -81,6 +82,7 @@ These is the top results of the chart.
 |318410|비비씨|BBC|KOSDAQ|가정용품|13.45|1.06|0.00%|  
 
 Through some manipulation and subsetting, the data has been cleaned as following.
+
 |code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
 |---|---|---|---|---|---|---|---|  
 |000700|유수홀딩스|Eusu Holdings|KOSPI|항공화물운송과물|1.61|0.43|9.04|  
@@ -94,6 +96,7 @@ Through some manipulation and subsetting, the data has been cleaned as following
 |003545|대신증권|DaishinSecu|KOSPI|증권|2.32,|0.44|7.04|  
 |001755|한양증권|HanyangSecu|KOSPI|증권|2.62|0.4|,5.1|  
 |025000|KPX케미칼|KPXCHEMICAL|KOSPI|화학|4.32|0.45|5.23|  
+
 Something interesting is that we can see that the finance sector covers up most of the stocks as above. Plus, there is none of the stocks that are up on KOSDAQ which kind of explains the insecurity of the small companies. However, I think this is way too ignorant to invest in these stocks and not considering other factors.
 
 # Future Direction
