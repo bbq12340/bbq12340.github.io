@@ -80,11 +80,11 @@ td, th {
 </style>
 |code|name|engName|market|sector|yearPer|yearPbr|yearDivYield|  
 |----|----|-------|------|------|-------|-------|------------|  
-| 009770 | 삼정펄프 | SAMJUNGPULP | KOSPI | 가정용품 | 49.27 | 0.34 | 3.57% |  
-| 044480 | 블루베리 | Blueberry NFT | KOSDAQ | 가정용품 | N/A | 1.76 | 0.00% |  
-| 203690 | 프로스테믹스 | Prostemics | KOSDAQ | 가정용품 | N/A | 5.46| 0.00% |  
-| 012690 | 모나리자 | Monalisa | KOSPI | 가정용품 | 40.60 | 1.83 | 2.02% |  
-| 318410 | 비비씨 | BBC | KOSDAQ | 가정용품 | 13.45 | 1.06 | 0.00% |  
+|009770|삼정펄프|SAMJUNGPULP|KOSPI|가정용품|49.27|0.34|3.57%|  
+|044480|블루베리|Blueberry NFT|KOSDAQ|가정용품|N/A|1.76|0.00%|  
+|203690|프로스테믹스|Prostemics|KOSDAQ|가정용품|N/A|5.46|0.00%|  
+|012690|모나리자|Monalisa|KOSPI|가정용품|40.60|1.83|2.02%|  
+|318410|비비씨|BBC|KOSDAQ|가정용품|13.45|1.06|0.00%|  
 
 Through some manipulation and subsetting, the data has been cleaned as following.
 
