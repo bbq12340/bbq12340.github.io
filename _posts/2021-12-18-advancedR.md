@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Notes on advanced R
+title: Notes on Advanced R Programming
 ---
 # Introduction
 This note is based on a lecture about R programming language. The content resource is from [advanced R by Hadley Wickham](https://adv-r.hadley.nz/). The notes were taken in year Spring 2021 and are uploaded just for myself in order to not forget about the language.

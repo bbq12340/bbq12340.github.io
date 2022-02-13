@@ -117,9 +117,11 @@ So, unlike dot product (inner product) where we have to calculate the whole matr
 # The Five Key Factorization
 1. Elimination $A=LU$
 2. Gram-Schmidt $A=QR$
-3. Spectural Theorem $S=Q\Delta Q^T$
-4. $A=X\Delta X^T$
+3. Spectural Theorem $S=Q\Lambda Q^T$
+4. $A=X\Lambda X^T$
 5. SVD $A=U\Sigma V^T$
+   
+Calculation with matrices is a difficult job. Factorization makes it so much easier. All factorizations will be explained hopefully.
 
 ### Elimination
 $$
@@ -133,12 +135,135 @@ In outer product perspective the equation above would be,
 $$
 A = sum\ of\ (col_k^L)\times(row_k^U)
 $$
-This in case would have a result like below,
+This would have a result like below,
 $$
 A = col_1\times row_1 + \begin{bmatrix}
     0&.&.&.&0\\ .\\ .&&A_2\\ .\\0
 \end{bmatrix}=
 col_1\times row_1 + col_2\times row_2 + \begin{bmatrix}
-    0&.&.&.&0\\ .\\ .&&A_2\\ .\\0
+    0&.&.&.&0\\ .&0\\ .&&A_3\\ .\\0
 \end{bmatrix}
 $$
++ Why do we need this?
+  When we are able to factor a matrix into multiplication of triangular matrices, it makes our equation a lot more lighter such as for inversion and determinant.
++ How to factorize?
+  Suppose there is 2 by 2 matrix, A that can be transformed into an upper triangular matrix U which will have 0 in (2,1). The process would look like this.
+$$
+E_{21}A = U\\ \ \\
+E_{21}\begin{bmatrix}
+    4&3\\8&7
+\end{bmatrix}=\begin{bmatrix}
+    4&3\\0&1
+\end{bmatrix}\\
+\ \\
+\leftrightarrow A=E_{21}^{-1}U\\
+\leftrightarrow A=LU
+$$
+### Orthonormal & Eigenvalues & Eigenvectors
+However, there is something further more special than LU decomposition (factorization). Elimination provides us more efficient way to calculate and observe a single matrix equation such as inverse or determinant. We need more than that.  
+#### Orthonormal
+Let us say there is an **orthogonal matrix** Q; square and orthonormal columns.
+$$
+Q=\begin{bmatrix}
+    q_1&...&q_n
+\end{bmatrix}\\
+\ \\
+Q^TQ=I=QQ^T
+$$
+This matrix is very special because
+1. length of linearly transformed vector is consistent
+   $$
+   ||Q\boldsymbol{x}||=||\boldsymbol{x}||
+   $$
+2. inverse = transpose
+   $$
+   Q^T = Q^{-1}
+   $$
+   don't forget that this doesn't apply to every **orthonormal matrices**, only **orthogonal matrices**.
+
+Since these matrices are very useful tools to manipulate equations, it would be very nice if we could make them and there are few representative methods. It would be wonderful to be able to explain all the methods, but most of them are very well explained in wikipedia. The main focus here is the last one; via eigenvectors.
+1. Rotation matrices
+   $$Q=
+   \begin{bmatrix}
+       cos\theta&-sin\theta \\ sin\theta&cos\theta
+   \end{bmatrix}
+   $$
+2. Reflection matrices
+   $$Q=
+    \begin{bmatrix}
+       cos\theta&sin\theta \\ sin\theta&cos\theta
+   \end{bmatrix}
+   $$
+3. Householder reflection
+   $$
+   H=I-2uu^T
+   $$
+4. Hadamard
+   Always possible if $\frac{N}{4}$= whole number 
+   $$
+   H_2=\frac{1}{\sqrt{2}}\begin{bmatrix}
+       1&1\\1&-1
+   \end{bmatrix}
+   $$
+5. Wavelets
+   Haar matrix by scaling
+   $$
+   \begin{bmatrix}
+       1&1&1&0\\1&1&-1&0\\1&-1&0&1\\1&-1&0&-1\\
+   \end{bmatrix}_{unit .}
+   $$
+6. **Eigenvectors**
+   We can create as many orthogonal matrices just like above, however, the most useful ones come from **the eigenvector matrices of symmatric / orthogonal matrices**.  
+#### Eigenvalues & Eigenvectors
+Let us say there is a **normal nxn matrix A** that have non-zero eigenvalues. 
+$$
+A\boldsymbol{x} = \lambda\boldsymbol{x}
+$$
+This means that there are some vectors $x$ with a constant direction after the linear mapping; $T(\boldsymbol{x})$. Such vectors of A is when dealing with equations like below.
+$$
+v = c_1x_1+...+c_nx_n\\
+A^kv=\lambda_1^kc_1x_1+...+\lambda_n^kc_nx_n
+$$
+Then, let us say there is a **similar matrix B** that has same eigenvalues as A does.
+$$
+B = M^{-1}AM\\
+\ \\
+M: diagonalize\ A\\
+\ \\
+B\boldsymbol{y}=M^{-1}AM\boldsymbol{y} = \lambda\boldsymbol{y}\\
+\lrarr A(M\boldsymbol{y})=\lambda(M\boldsymbol{y})
+$$
+This equation tells us that the similar matrix B has same eigenvalue but the eigenvector is different from A's; $\boldsymbol{y}$.  
+Bonus: There are also some other ways to check when it comes to eigenvalues.
+$$
+\Sigma\lambda=tr(A)\\
+\ \\
+\Pi\lambda=det(A)
+$$
+Let us say there is a **symmetric nxn matrix S** that have non-zero eigenvalues. Something we to remember is that the eigenvalues are real numbers and the eigenvectors are orthogonal.
+$$
+S=\begin{bmatrix}
+    0&1\\1&0
+\end{bmatrix}\\
+\ \\
+diag(\lambda)=\Lambda = \begin{bmatrix}
+    1&0\\0&-1
+\end{bmatrix}\\
+\ \\
+M^{-1}SM = \Lambda\\
+\ \\
+\lrarr SM=M\Lambda\\
+\ \\
+\lrarr S[x_1 \ x_2] = [x_1 \ x_2]\begin{bmatrix}
+    1&0\\0&-1
+\end{bmatrix}\\
+\ \\
+\lrarr [Sx_1 \ Sx_2] = [x_1 \ -x_2]
+$$
+Implementing all we have learnt above in the current chapter, we are able to understand following; **S is similar to $\Lambda$ and $M$ is eigenvector matrix**. Now, with some further thinking, this does not only work in symmetric but also normal matrices. Thus, we can organize everything into two simple factorizations.
+$$
+A = X\Lambda X^{-1}\\
+S=Q\Lambda Q^{-1}
+$$
++ In conclusion?
+  We can factor any matrices into composition of eigenvalues & eigenvectors. In addition, symmetric matrices provide us very useful orthogonal matrices.
