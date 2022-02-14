@@ -32,7 +32,7 @@ $$
 \begin{aligned}
     P: \Omega \to [0,1]
 \end{aligned}
-$$
+$$  
 #### Independent Event
 If, $$P(B|A)=P(B)$$, A and B are independent to each other. And by *multiplication law*, $$P(A\cap B)=P(A)P(B)$$
 #### Bayes Theorem
@@ -42,7 +42,7 @@ $$
     P(A_k|X)=\frac{P(A_k\cap X)}{P(X)} \\
 =\frac{P(A_k\cap X)}{P(A_1)P(X|A_1)+P(A_n)P(X|A_n)+...+P(A_n)P(X|A_n)}
 \end{aligned}
-$$
+$$  
 We will come back to these two deeper in some future.  
 
 ## Random Variables & Probability Distribution Function
@@ -52,20 +52,20 @@ $$
 \begin{aligned}
     P(A) = probability\ of\ event\ A
 \end{aligned}
-$$
+$$  
 Let us say we are conducting an experiment where we toss coins 5 times. The sample space would be,
 $$
 \begin{aligned}
     \Omega: \{TTTTT,TTTTH,TTTHH,TTHHH,THHHH,HHHHH\}
 \end{aligned}
-$$
+$$  
 If we set the event A as 'the frequency of head in 5 coin tosses', possible outcomes would be $$\{0,1,2,3,4,5\}$$ and we define this kind of numbers as *random variables*. This is very important difference between mathematics and statistics. Variables in former field has sigular value whereas the latter has different or univariate probability for each potential values.  
 Thus, **random variables is a real-valued function defined on a sample space**.  
 $$
 \begin{aligned}
     X: \Omega \to \R
 \end{aligned}
-$$
+$$  
 However, unlike the coin toss experiment there are events where we can't count;*discrete*. This is when the sample space is *continuous*, such as measuring time. In other words, when the possible outcomes of an event can only be expressed through ranges.  
 #### Probability Distribution Function
 This leads us to the next step. What if we need to calculate algebra with the random variables? There are certainly situation when we want to know what $$P(B|A)$$ is. How should we express the probability of every possible outcome of event A; *probability distribution function*?   
@@ -73,24 +73,24 @@ $$
 \begin{aligned}
     P(A=x)=f_A(x)\ for\ x \in A
 \end{aligned}
-$$
+$$  
 Let $$X=\{x_1,...,x_n\}$$ with the probability $$p_k=f_X(x_k)$$ and since,  
 $$
 \begin{aligned}
     average=\Sigma kp_k=\Sigma x_kf_X(x_k)\\
 =mathematical\ expectation=E(X)
 \end{aligned}
-$$
+$$  
 Just like the arithmatic average, the variance would be,  
 $$
 \begin{aligned}
     V(X)=\Sigma (x_k-E(X))^2f_X(x_k)=\Sigma x_k^2f_X(x_k)-(E(X))^2
 \end{aligned}
-$$
+$$  
 and we can further prove,  
 $$
 \begin{aligned}
     E(aX+b)=aE(X)+b\\
-V(aX+b)=a^2V(X)
+    V(aX+b)=a^2V(X)
 \end{aligned}
 $$
