@@ -13,16 +13,19 @@ The note is based on the lecture, [Matrix Methods in Data Analysis, Signal Proce
 ###  Column Space
   
 When we face <img src="https://latex.codecogs.com/gif.latex?A&#x5C;boldsymbol{x}=&#x5C;boldsymbol{b}"/> where <img src="https://latex.codecogs.com/gif.latex?&#x5C;boldsymbol{b}"/> is non-zero, we've been calculating the multiplication by row times column; dot product. However, it seems very useful when we think vector-wise; column times row.  
+
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{align*}%20%20%20%20given,&#x5C;%20&#x5C;boldsymbol{x}&#x5C;in&#x5C;boldsymbol{R}^3&#x5C;end{align*}"/></p>  
   
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?A&#x5C;boldsymbol{x}=&#x5C;begin{bmatrix}2&amp;1&amp;3&#x5C;&#x5C;%20%20%20%203&amp;1&amp;4&#x5C;&#x5C;5&amp;7&amp;12&#x5C;end{bmatrix}&#x5C;begin{bmatrix}x_1&#x5C;&#x5C;%20%20%20%20x_2&#x5C;&#x5C;x_3&#x5C;end{bmatrix}=&#x5C;begin{bmatrix}%20%20%20%202&#x5C;&#x5C;3&#x5C;&#x5C;5&#x5C;end{bmatrix}x_1+&#x5C;begin{bmatrix}%20%20%20%201&#x5C;&#x5C;1&#x5C;&#x5C;7&#x5C;end{bmatrix}x_2+&#x5C;begin{bmatrix}%20%20%20%203&#x5C;&#x5C;4&#x5C;&#x5C;12&#x5C;end{bmatrix}x_3"/></p>  
   
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?=combinations&#x5C;%20of&#x5C;%20columns&#x5C;%20of&#x5C;%20A"/></p>  
   
-When we think of all possible <img src="https://latex.codecogs.com/gif.latex?A&#x5C;boldsymbol{x}=&#x5C;boldsymbol{b}"/>,
+When we think of all possible <img src="https://latex.codecogs.com/gif.latex?A&#x5C;boldsymbol{x}=&#x5C;boldsymbol{b}"/>,  
+
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?all&#x5C;%20combinations&#x5C;%20of&#x5C;%20columns&#x5C;%20of&#x5C;%20A"/></p>  
   
-and let us denote this as,
+and let us denote this as,  
+
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?=%20C(A)%20=%20Column&#x5C;%20Space&#x5C;%20of&#x5C;%20A"/></p>  
   
 in this case, the column space of A would be a plane since the <img src="https://latex.codecogs.com/gif.latex?rank(A)=2"/> which is a plane, a subspace of <img src="https://latex.codecogs.com/gif.latex?&#x5C;boldsymbol{R}^3"/>.
