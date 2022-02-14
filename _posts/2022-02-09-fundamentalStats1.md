@@ -34,46 +34,63 @@ $$
 \end{aligned}
 $$
 #### Independent Event
-If, $P(B|A)=P(B)$, A and B are independent to each other. And by *multiplication law*, $P(A\cap B)=P(A)P(B)$
+If, $$P(B|A)=P(B)$$, A and B are independent to each other. And by *multiplication law*, $$P(A\cap B)=P(A)P(B)$$
 #### Bayes Theorem
-When sample space $S=A_1\cup A_2 ...\cup A_n$ while $A_1\cap A_2 ...\cap A_n=\emptyset$ and given case $X, P(X)>0$, the **prior probability** of $A_k$,
+When sample space $$S=A_1\cup A_2 ...\cup A_n$$ while $$A_1\cap A_2 ...\cap A_n=\emptyset$$ and given event where $$X, P(X)>0$$, the **prior probability** of $$A_k$$,
 $$
-P(A_k|X)=\frac{P(A_k\cap X)}{P(X)} \\
+\begin{aligned}
+    P(A_k|X)=\frac{P(A_k\cap X)}{P(X)} \\
 =\frac{P(A_k\cap X)}{P(A_1)P(X|A_1)+P(A_n)P(X|A_n)+...+P(A_n)P(X|A_n)}
+\end{aligned}
 $$
-We will come back to these two deeper in some future.
+We will come back to these two deeper in some future.  
+
 ## Random Variables & Probability Distribution Function
 #### Random Variables
-It is very neat to express an event with specific number. However, what does $A$ in $P(A)$ indicate? 
+It is very neat to express an event with specific number. However, what does $$A$$ in $$P(A)$$ indicate?  
 $$
-P(A) = probability\ of\ event\ A
+\begin{aligned}
+    P(A) = probability\ of\ event\ A
+\end{aligned}
 $$
 Let us say we are conducting an experiment where we toss coins 5 times. The sample space would be,
 $$
-\Omega: \{TTTTT,TTTTH,TTTHH,TTHHH,THHHH,HHHHH\}
+\begin{aligned}
+    \Omega: \{TTTTT,TTTTH,TTTHH,TTHHH,THHHH,HHHHH\}
+\end{aligned}
 $$
-If we set the event A as 'the frequency of head in 5 coin tosses', possible outcomes would be $\{0,1,2,3,4,5\}$ and we define this kind of numbers as *random variables*. This is very important difference between mathematics and statistics. Variables in former field has sigular value whereas the latter has different or univariate probability for each potential values.
-Thus, **random variables is a real-valued function defined on a sample space**.
+If we set the event A as 'the frequency of head in 5 coin tosses', possible outcomes would be $$\{0,1,2,3,4,5\}$$ and we define this kind of numbers as *random variables*. This is very important difference between mathematics and statistics. Variables in former field has sigular value whereas the latter has different or univariate probability for each potential values.  
+Thus, **random variables is a real-valued function defined on a sample space**.  
 $$
-X: \Omega \to \R
+\begin{aligned}
+    X: \Omega \to \R
+\end{aligned}
 $$
-However, unlike the coin toss experiment there are events where we can't count;*discrete*. This is when the sample space is *continuous*, such as measuring time. In other words, when the possible outcomes of an event can only be expressed through ranges.
+However, unlike the coin toss experiment there are events where we can't count;*discrete*. This is when the sample space is *continuous*, such as measuring time. In other words, when the possible outcomes of an event can only be expressed through ranges.  
 #### Probability Distribution Function
-This leads us to the next step. What if we need to calculate algebra with the random variables? There are certainly situation when we want to know what $P(B|A)$ is. How should we express the probability of every possible outcome of event A; *probability distribution function*? 
+This leads us to the next step. What if we need to calculate algebra with the random variables? There are certainly situation when we want to know what $$P(B|A)$$ is. How should we express the probability of every possible outcome of event A; *probability distribution function*?   
 $$
-P(A=x)=f_A(x)\ for\ x \in A
+\begin{aligned}
+    P(A=x)=f_A(x)\ for\ x \in A
+\end{aligned}
 $$
-Let $X=\{x_1,...,x_n\}$ with the probability $p_k=f_X(x_k)$ and since,
+Let $$X=\{x_1,...,x_n\}$$ with the probability $$p_k=f_X(x_k)$$ and since,  
 $$
-average=\Sigma kp_k=\Sigma x_kf_X(x_k)\\
+\begin{aligned}
+    average=\Sigma kp_k=\Sigma x_kf_X(x_k)\\
 =mathematical\ expectation=E(X)
+\end{aligned}
 $$
-Just like the arithmatic average, the variance would be,
+Just like the arithmatic average, the variance would be,  
 $$
-V(X)=\Sigma (x_k-E(X))^2f_X(x_k)=\Sigma x_k^2f_X(x_k)-(E(X))^2
+\begin{aligned}
+    V(X)=\Sigma (x_k-E(X))^2f_X(x_k)=\Sigma x_k^2f_X(x_k)-(E(X))^2
+\end{aligned}
 $$
-and we can further prove,
+and we can further prove,  
 $$
-E(aX+b)=aE(X)+b\\
+\begin{aligned}
+    E(aX+b)=aE(X)+b\\
 V(aX+b)=a^2V(X)
+\end{aligned}
 $$
