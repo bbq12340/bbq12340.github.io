@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Review on Fundamental Statistics
+usemathjax: true
 ---
 # Introduction
 This note is based on some basic textbooks and articles that I have been studying over for the past 4 years. It is a review of the fundamental statistics in order to remind myself everytime when I'm confused with it. Some of the mathematical expressions are referred from [here](https://www.cut-the-knot.org/probability.shtml).
