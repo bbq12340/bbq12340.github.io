@@ -8,7 +8,7 @@ The note is based on the lecture, [Matrix Methods in Data Analysis, Signal Proce
 
 # Matrix-vector multiplication using Column Space of A
 ### Column Space
-When we face $A\boldsymbol{x}=\boldsymbol{b}$ where $\boldsymbol{b}$ is non-zero, we've been calculating the multiplication by row times column; dot product. However, it seems very useful when we think vector-wise; column times row.
+When we face $A\boldsymbol{x}=\boldsymbol{b}$ where $\boldsymbol{b}$ is non-zero, we've been calculating the multiplication by row times column; dot product. However, it seems very useful when we think vector-wise; column times row.  
 $$
 \begin{aligned}
     given,\ \boldsymbol{x}\in\boldsymbol{R}^3
