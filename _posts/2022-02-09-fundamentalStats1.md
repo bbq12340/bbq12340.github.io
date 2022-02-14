@@ -4,7 +4,8 @@ title: Review on Fundamental Statistics
 usemathjax: true
 ---
 # Introduction
-This note is based on some basic textbooks and articles that I have been studying over for the past 4 years. It is a review of the fundamental statistics in order to remind myself everytime when I'm confused with it. Some of the mathematical expressions are referred from [here](https://www.cut-the-knot.org/probability.shtml).
+This note is based on some basic textbooks and articles that I have been studying over for the past 4 years. It is a review of the fundamental statistics in order to remind myself everytime when I'm confused with it. Some of the mathematical expressions are referred from [here](https://www.cut-the-knot.org/probability.shtml).  
+
 
 # Contents
 1. The Fundamentals
@@ -19,15 +20,18 @@ This note is based on some basic textbooks and articles that I have been studyin
 # 1 The Fundamentals
 ## Statistics
 Statistics: A study to easily manage information and aid choice-decision  
-Statistics is applied in the following procedure; **Decision problem -> Experiment design -> Collect data -> Clean data -> Explanatory data analysis -> Conclusion**
+Statistics is applied in the following procedure; **Decision problem -> Experiment design -> Collect data -> Clean data -> Explanatory data analysis -> Conclusion**  
 
-Every step of the process has various ways to conduct and even the conclusion can lead you to further procedures such as modeling, model testing, model deploying etc. I hope I can cover every steps throughout the future posts.
+Every step of the process has various ways to conduct and even the conclusion can lead you to further procedures such as modeling, model testing, model deploying etc. I hope I can cover every steps throughout the future posts.  
 
 ## Probability
-**Statistical experiment** allow us to examine a specific situation in controlled condition. When we are trying to calculate the likelihood of a single event to happen in the situation *probability* is ideal for this process. *Sample space*($\Omega$) is a collection of all possible outcomes in an experiment.
-Probability: A real-valued function to express the possibility of an event from 0 to 1
+**Statistical experiment** allow us to examine a specific situation in controlled condition. When we are trying to calculate the likelihood of a single event to happen in the situation *probability* is ideal for this process. *Sample space*($$\Omega$$) is a collection of all possible outcomes in an experiment.  
+Probability: A real-valued function to express the possibility of an event from 0 to 1  
+
 $$
-P: \Omega \to [0,1]
+\begin{aligned}
+    P: \Omega \to [0,1]
+\end{aligned}
 $$
 #### Independent Event
 If, $P(B|A)=P(B)$, A and B are independent to each other. And by *multiplication law*, $P(A\cap B)=P(A)P(B)$
