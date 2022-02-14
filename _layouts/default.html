@@ -11,7 +11,7 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    {% if page.use_math %} {% include mathjax_support.html %} {% endif %}
+
     <link
       rel="stylesheet"
       type="text/css"
@@ -23,7 +23,19 @@
       title="{{ site.name }} - {{ site.description }}"
       href="{{ site.baseurl }}/feed.xml"
     />
-
+    <!-- for mathjax support -->
+    {% if page.use_math %}
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script
+      type="text/javascript"
+      async
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    ></script>
+    {% endif %}
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
