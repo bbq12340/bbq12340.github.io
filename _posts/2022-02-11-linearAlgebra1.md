@@ -10,9 +10,9 @@ The note is based on the lecture, [Matrix Methods in Data Analysis, Signal Proce
 ### Column Space
 When we face $A\boldsymbol{x}=\boldsymbol{b}$ where $\boldsymbol{b}$ is non-zero, we've been calculating the multiplication by row times column; dot product. However, it seems very useful when we think vector-wise; column times row.  
 $$
-\begin{*align}
+\begin{align*}
     given,\ \boldsymbol{x}\in\boldsymbol{R}^3
-\end{*align}
+\end{align*}
 $$
 $$
 A\boldsymbol{x}=\begin{bmatrix}2&1&3\\
