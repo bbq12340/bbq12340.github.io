@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linear Algebra pt. 1
-use_math: true
+usemathjax: true
 ---
 # Introduction
 The note is based on the lecture, [Matrix Methods in Data Analysis, Signal Processing and Machine Learning](https://www.youtube.com/watch?v=Cx5Z-OslNWE&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k) taught by Gilbert Strang, M.I.T. The class material is [here](https://math.mit.edu/~gs/learningfromdata/). This note is to get a more clear idea about linear algebra and its understanding.
