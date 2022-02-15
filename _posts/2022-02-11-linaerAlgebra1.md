@@ -18,7 +18,7 @@ $$
 \begin{aligned}
     2x-y&=0\\
     -x+2y&=3\\
-    \lrarr\\
+    \leftrightarrow\\
     \begin{bmatrix}
         2&-1\\-1&2
     \end{bmatrix}\begin{bmatrix}
@@ -67,7 +67,7 @@ $$
     x+2y+z&=2\\
     3x+8y+z&=12\\
     4y+z&=2\\
-    \lrarr\\
+    \leftrightarrow \\
     \begin{bmatrix}
         1&2&1\\3&8&1\\0&4&1
     \end{bmatrix}\begin{bmatrix}
@@ -85,14 +85,14 @@ $$
     x+2y+z&=2\\
     3x+8y+z&=12\\
     4y+z&=2\\
-    \lrarr\\
+    \leftrightarrow\\
     3x+6y+3z&=6\\
     3x+8y+z&=12\\
     4y+z&=2\\
-    \lrarr\\
+    \leftrightarrow\\
     -2y+2z&=-6\\
     4y+z&=2\\
-    \lrarr\\
+    \leftrightarrow\\
     z&=-5\\
     y&=\frac{7}{4}\\
     x&=1
@@ -112,10 +112,10 @@ $$
     \begin{bmatrix}
         1&2&1&2\\3&8&1&12\\0&4&1&2
     \end{bmatrix}
-    \rarr\begin{bmatrix}
+    \rightarrow\begin{bmatrix}
         1&2&1&2\\0&2&-2&6\\0&4&1&2
     \end{bmatrix}
-    &\rarr\begin{bmatrix}
+    &\rightarrow\begin{bmatrix}
         1&2&1&2\\0&2&-2&6\\0&0&5&-10
     \end{bmatrix}\\
     \ \\
@@ -134,7 +134,7 @@ $$
     \end{bmatrix}=\begin{bmatrix}
         1&2&1\\0&2&-2\\0&4&1
     \end{bmatrix}\\
-    \lrarr\\
+    \leftrightarrow\\
     E_{21}&=\begin{bmatrix}
         1&0&0\\-3&1&0\\0&0&1
     \end{bmatrix}
@@ -149,7 +149,7 @@ We will skip the dot product (row times column) part because it is a very simple
 $$
 \begin{aligned}
     AB=C\\
-    \lrarr\begin{bmatrix}
+    \leftrightarrow\begin{bmatrix}
         \ & \ & \ \\ c_1 & c_2 & c_3 \\ \ & \ & \ \\
     \end{bmatrix}\begin{bmatrix}
         \ & r_1 & \ \\ \ & r_2 & \ \\ \ & r_3 & \ \\
@@ -205,7 +205,7 @@ $$
 In addition, what the E matrices; *elementary matrices* are really doing is just applying multiplication + subtraction between rows. Therefore, we can infer there is some multiplication that would do the operation backwards; *inverse*.  
 $$
 \begin{aligned}
-    U\rarr A\\
+    U\rightarrow A\\
     ?U=A
 \end{aligned}
 $$  
@@ -225,7 +225,7 @@ $$
     \begin{aligned}
         \begin{bmatrix}
         1&2&1\\3&6&1\\0&4&1
-    \end{bmatrix}\rarr\begin{bmatrix}
+    \end{bmatrix}\rightarrow\begin{bmatrix}
         1&2&1\\0&0&-2\\0&4&1
     \end{bmatrix}
     \end{aligned}
@@ -247,8 +247,8 @@ So,
 $$
 \begin{aligned}
     A^{-1}A &= AA^{-1} = I\\
-    \lrarr E[A|I] &=[I|A^{-1}]\\
-    \lrarr E&=A^{-1}
+    \leftrightarrow E[A|I] &=[I|A^{-1}]\\
+    \leftrightarrow E&=A^{-1}
 \end{aligned}
 $$  
 
@@ -257,7 +257,7 @@ Just like the prior section (Ex 1), A is going to be manipulated by E into I. Co
 $$
 \begin{aligned}
     &E_{32}E_{31}E_{21}A = U\\
-    &\lrarr\\
+    &\leftrightarrow\\
     &A = E_{32}^{-1}E_{31}^{-1}E_{21}^{-1}U=LU
 \end{aligned}
 $$  
@@ -278,9 +278,9 @@ Additionally, there are some other important points.
 $$
 \begin{aligned}
     (AB)(B^{-1}A^{-1})=I\\
-    \lrarr (AB)^{-1}=(B^{-1}A^{-1})\\
+    \leftrightarrow (AB)^{-1}=(B^{-1}A^{-1})\\
     (A^{-1})^TA^T=I\\
-    \lrarr (A^{-1})^T=(A^T)^{-1}
+    \leftrightarrow (A^{-1})^T=(A^T)^{-1}
 \end{aligned}
 $$  
 
