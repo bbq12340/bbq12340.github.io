@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 'Linear Algebra pt. 1'
+title: 'Linear Algebra pt. 2'
 usemathjax: true
 ---  
   
 #  Introduction
   
-The note is based on the lecture, [Matrix Methods in Data Analysis, Signal Processing and Machine Learning](https://www.youtube.com/watch?v=Cx5Z-OslNWE&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k ) taught by Gilbert Strang, M.I.T. The class material is [here](https://math.mit.edu/~gs/learningfromdata/ ). This note is to get a more clear idea about linear algebra and its understanding.  
+The note is based on the lecture, [Matrix Methods in Data Analysis, Signal Processing and Machine Learning](https://www.youtube.com/watch?v=Cx5Z-OslNWE&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k ) taught by Gilbert Strang, M.I.T. The note is continued from the previous post about ['Linear Algebra pt. 1'](https://bbq12340.github.io/linearAlgebra1/)The class material is [here](https://math.mit.edu/~gs/learningfromdata/ ). This note is to get a more clear idea about linear algebra and its understanding.  
 
   
 #  Matrix-vector multiplication using Column Space of A
