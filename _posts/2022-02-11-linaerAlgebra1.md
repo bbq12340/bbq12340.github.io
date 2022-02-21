@@ -205,8 +205,8 @@ $$
 In addition, what the E matrices; *elementary matrices* are really doing is just applying multiplication + subtraction between rows. Therefore, we can infer there is some multiplication that would do the operation backwards; *inverse*.  
 $$
 \begin{aligned}
-    U\rightarrow A\\
-    ?U=A
+    &U\rightarrow A\\
+    &?U=A
 \end{aligned}
 $$  
 
@@ -310,4 +310,174 @@ With the knowledge of matrix multiplication we are ready to look at *spaces*.
 
 # Spaces
 
-*updating...*
+### Intro to spaces
+In linear algebra, we want to operate simple multiplication and addition to vectors. In a space of vectors; **vector space**, these operation should be allowed.  
+
+$$
+\begin{aligned}
+    &c\boldsymbol{v} \\
+    &\boldsymbol{v} + \boldsymbol{w} \\
+    &c\boldsymbol{v} + d\boldsymbol{w}
+\end{aligned}
+$$  
+
+Let us say there is a vector space that is composed of all real vectors with 2 real components; $$\R^2$$. This plane is "closed" for all vector operations. In contrast, a quater of the plane where both components are always positive is not "closed"; *not a vector space*.  
+
+However, it is not very useful to always talk about the whole vector space. Most of the times, we want the space inside the vector space; **subspace**. By the definition of vector space (vector operation), possible subspaces of $$\R^2$$ should be as followings;  
+
+$$
+\begin{aligned}
+    \R^2 \supset \{\R^2, L, O\}
+\end{aligned}
+$$  
+
+where L is a line that goes through O; **origin**.  
+
+### Subspace and Matrices
+So how do subspaces come out of matrices?  
+
+#### Column Space
+When there is a m by n matrix A, all the linear combination of columns form a subspace of $$\R^m$$; **column space**.  
+
+$$
+\begin{aligned}
+    &A=\begin{bmatrix}
+        1&1&2\\2&1&3\\3&1&4\\4&1&5
+    \end{bmatrix}\\
+    &C(A) = c_1\boldsymbol{x_1}+c_2\boldsymbol{x_2}+c_3\boldsymbol{x_3}\\
+    &=a\ cube?\ going\ through\ origin \\
+    &=a\ plane\ going\ through\ origin
+\end{aligned}
+$$  
+
+The reason we are interested in column spaces can be reviewed from above, "Intro to Matrices"; when we are trying to figure out an equation as below.  
+
+$$
+\begin{aligned}
+    &A\boldsymbol{x}=\boldsymbol{b}\\
+    &C(A)=\boldsymbol{b}...?
+\end{aligned}
+$$  
+
+In other words, since the left side of the equation is about operations in column space, we are only able to solve the equation when b is in C(A). What we can also learn from the column space is that even though there are three real vectors with four components; subspace of $$\R^4$$, the linear combination of them is a plane, not a cube.  
+
+#### Null Space
+The **null space** is the solutions to when the combination of column vectors are in origin.  
+
+$$
+\begin{aligned}
+    A\boldsymbol{x}=\begin{bmatrix}
+        1&1&2\\2&1&3\\3&1&4\\4&1&5
+    \end{bmatrix}\begin{bmatrix}
+        x_1\\x_2\\x_3
+    \end{bmatrix}=\begin{bmatrix}
+        0\\0\\0\\0
+    \end{bmatrix}
+\end{aligned}
+$$  
+
+We can see that the difference btw the null space and the column space is that,
+1. now we're interested in vector x  
+2. N(A) is a subspace of $$\R^3$$  
+
+Repeating, the null space is **not** the linear combination of columns but the solution which is a line in this case.  
+
+How do we find the solution? The easiest way is to execute *elimination*.  
+
+$$
+\begin{aligned}
+    &A=\begin{bmatrix}
+        1&2&2&2\\2&4&6&8\\3&6&8&10
+    \end{bmatrix}\\
+    &\rightarrow \begin{bmatrix}
+        1&2&2&2\\0&0&2&2\\0&0&0&0
+    \end{bmatrix}=U\\
+    &is\ also\ known\ as\ echelon\ form\\
+    &x_1+2x_2+2x_3+2x_4=0\\
+    &2x_3+2x_4=0
+\end{aligned}
+$$  
+
+The number of pivot columns are two; **rank of A** which are 1 and 3. And we have the free variable x2 and x4 which don't matter what they are. If we apply each of the variables either 0 or 1, we can get the whole null space by combination of the vectors. Of course, the zero vector also works but since it is zero, it's omitted.  
+
+$$
+\begin{aligned}
+    N(A) = c\begin{bmatrix}
+        -2\\1\\0\\0
+    \end{bmatrix}+d\begin{bmatrix}
+        0\\0\\-1\\1
+    \end{bmatrix}
+\end{aligned}
+$$  
+
+**To summarize, a null space is a combination of special solutions. And the number of solutions (nonzero vector) is equal to the number of free variables; dimension - # pivot variables; n-r.**  
+
+### Coming back to column space
+Since we obtained the complete solution for Ax=0, let us try Ax=b.  
+
+$$
+\begin{aligned}
+    &[A \ \boldsymbol{b}]=\begin{bmatrix}
+        1&2&2&2&b_1\\2&4&6&8&b_2\\3&6&8&10&b_3
+    \end{bmatrix}\\
+    &\rightarrow \begin{bmatrix}
+        1&2&2&2&b_1\\0&0&2&4&b_2-2b_1\\0&0&0&0&b_3-b_2-b_1
+    \end{bmatrix}\\
+    &x_1+2x_2+2x_3+2x_4=b_1\\
+    &2x_3+4x_4=b_2-b_1\\
+    &b_3-b_2-b_1=0\\
+\end{aligned}
+$$  
+
+When b is a nonzero vector, the equation is only solvable when b is in C(A). If we set some particular number for b's, we can solve the eliminated equation by setting all the free variables just like above. Therefore, we can summarize the whole solution as the combination of a particular solution (to particular b) and the solution to Ax=0.  
+
+$$
+\begin{aligned}
+    \boldsymbol{x}_{complete} = cx_{particular}+dx_{nullspace}
+\end{aligned}
+$$  
+
+If we categorize by rank of matrix that is m by n of rank r (r <= m, r<=n),  
+1. full column rank (r=n)  
+   pivot in every columns = no free variables = solutions to Ax=b: only zero vector if b exists; 0 or 1 solution  
+2. full row rank (r=m)  
+   pivot in every rows = b has many outcomes = can solve Ax=b for every b: infinite solutions; infinite  
+3. full rank; square; invertible (r=m=n)  
+   pivot in every columns & rows = b is 0: only zero vector; 1 solution  
+
+Therefore, the importance of rank rises when we are trying to figure out the number of special solutions.  
+
+### Linear Independence & Spanning & Basis & Dimension
+#### Independence
+If vectors $$x_1,...,x_n$$ are independent, no combination gives zero vector except the zero combination; all c's=0. In other words,  
+
+$$
+\begin{aligned}
+    &A=\begin{bmatrix}
+        v_1&v_2&\cdots &v_n
+    \end{bmatrix}\\
+    &v_i \ v_j\ independent\ if\ N(A)=\{ zero vector\}\\
+    &v_i \ v_j\ dependent\ if\ A\boldsymbol{x}=\boldsymbol{0}, \boldsymbol{x} \neq \boldsymbol{0}
+\end{aligned}
+$$  
+
+So, the columns are **independent** to each other when there are no free variables; r = n. In contrast, they are **dependent** when there are free variables; r < n.  
+
+#### Spanning
+**Spanning to space** is a mathematical term to indicate the linear combination of vectors. For example, the vectors $$v_1,...,v_n$$ span a space when the space consists of all combination of the vectors.  
+
+With these terms, we can define **basis**.  
+
+#### Basis
+**Basis** for a space is a sequence of vectors that are **independent** to each other and that can **span** the space.  
+
+For example,  
+$$
+\begin{aligned}
+    &\R^3\\
+    &\begin{bmatrix}1\\0\\0\end{bmatrix},\begin{bmatrix}0\\1\\0\end{bmatrix},\begin{bmatrix}0\\0\\1\end{bmatrix}& \cdots (1)\\
+    &\begin{bmatrix}1\\1\\2\end{bmatrix},\begin{bmatrix}2\\2\\5\end{bmatrix}& \cdots (2)
+\end{aligned}
+$$  
+
+Given a space of R3, (1) can be defined as a basis of R3 since they are independent to each other and span to space. However, (2) can't be since they can't span to R3 but to R2 which is a plane. The number of basis; **dimension** are equal in the same space.
