@@ -480,4 +480,94 @@ $$
 \end{aligned}
 $$  
 
-Given a space of R3, (1) can be defined as a basis of R3 since they are independent to each other and span to space. However, (2) can't be since they can't span to R3 but to R2 which is a plane. The number of basis; **dimension** are equal in the same space.
+Given a space of R3, (1) can be defined as a basis of R3 since they are independent to each other and span to space. However, (2) can't be since they can't span to R3 but to R2 which is a plane. The number of basis; **dimension** are equal in the same space.  
+
+### Reduced Row Echelon Form
+Coming back to elimination, we need to ask ourselves, are we done?  
+
+$$
+\begin{aligned}
+    &A=\begin{bmatrix}
+        1&2&3\\2&4&6\\2&6&8\\2&8&10
+    \end{bmatrix}\\
+    &\rightarrow \begin{bmatrix}
+        1&2&3\\0&0&0\\0&2&2\\0&4&4
+    \end{bmatrix}\rightarrow \begin{bmatrix}
+        1&2&3\\0&2&0\\0&0&0\\0&0&0
+    \end{bmatrix}\\
+    &\rightarrow \begin{bmatrix}
+        1&0&1\\0&1&1\\0&0&0\\0&0&0
+    \end{bmatrix}=R=\begin{bmatrix}
+        I_{2\times2}&F_{2\times1}\\0_{2\times2}&0_{2\times1}
+    \end{bmatrix}
+\end{aligned}
+$$  
+
+The matrix R has two pivot columns, and one free column just as the original matrix but in a much more clean form. In the rows perspective, we only have independent rows and below are zero rows. Additionally, since there was only row operation, the null space hasn't changed; not the column space.  
+
+This is very important because,  
+
+$$
+\begin{aligned}
+    C(R) &\neq C(A)\\
+    C(R^T) &= C(A^T)\\
+    &\leftrightarrow\\
+    Row\ space\ of\ R &= Row\ space\ of\ A\\
+    &\leftrightarrow\\
+    equal\ &basis
+\end{aligned}
+$$  
+
+the first nonzero rows (there are r of them, just like pivot columns) are the basis for row space of A, which leads us to another step; **4 subspaces**.  
+
+
+### 4 Subspaces
+There are four major subspaces; Column space, Null space, Row space, Null space of A transpose (a.k.a the left null space). Assume there is a m by n matrix A,  
+
+$$
+C(A) \in \R^m\\
+N(A) \in \R^n\\
+C(A^T) \in \R^n\\
+N(A^T) \in \R^m 
+$$  
+
+We want to know the dimension of each space because we get a lot of information such as rank, basis during calculation of the process.  
+
+$$
+\begin{aligned}
+    &dim=\#\ of\ basis\\
+    &dim(C(A)) = \#\ of\ piv.\ cols\ of\ A=r\\
+    &dim(N(A)) = \#\ of\ free\ cols\ of\ A=n-r\\
+    &dim(C(A^T)) = \#\ of\ piv.\ cols\ of\ A=r\\
+\end{aligned}
+$$  
+
+What about the left null space?  
+
+$$
+\begin{aligned}
+    A^T\boldsymbol{y}&=\boldsymbol{0}\\
+    \boldsymbol{y^T}A&=\boldsymbol{0^T}\\
+    row\times A&=row
+\end{aligned}
+$$  
+
+By row operation, we are able to get zero row. So, we need to know special solutions that would lead us to zero row by conducting row operation to A and we can attain this by using reduced row echelon form.  
+
+$$
+\begin{aligned}
+    E\begin{bmatrix}
+      A_{m\times n}&I_{m \times m}  
+    \end{bmatrix}\rightarrow\begin{bmatrix}
+        R_{m \times n}&E_{m \times m}
+    \end{bmatrix}
+\end{aligned}
+$$  
+
+So, the last rows that would transform rows of A into zero rows would be the basis and the number of it (=free rows of R) would be the dimension of the left null space.  
+
+$$
+\begin{aligned}
+    dim(N(A^T))=\#\ of\ free\ rows\ of\ R\ or\ A=m-r
+\end{aligned}
+$$
