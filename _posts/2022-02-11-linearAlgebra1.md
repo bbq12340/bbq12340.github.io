@@ -9,6 +9,9 @@ The note is based on a [MIT open course](https://www.youtube.com/playlist?list=P
 # Contents
 1. Matrices
 2. Spaces
+3. Projections
+4. Orthogonality
+5. Eigenvalues & Eigenvectors
 
 # Matrices
 ### Intro to Matrices
@@ -229,8 +232,11 @@ $$
         1&2&1\\0&0&-2\\0&4&1
     \end{bmatrix}
     \end{aligned}
-    $$
-    We can exchange the row 2 and 3; *permutation*.
+    $$  
+
+    We can exchange the row 2 and 3; *permutation*.  
+
+
 #### Inverse
 So, we want a matrix that does exactly backwards what it does. If the matrix does its operation -> do it backwards, it is going to do nothing on the target matrix; *identity matrix*. It returns the exact matrix as you can see by thinking of the three types of multiplication from prior section.  
 
@@ -262,7 +268,9 @@ $$
 \end{aligned}
 $$  
 
-However, there are times when there is no matrix that can be inversible. It is when $$A\boldsymbol{x}=\boldsymbol{0}, \boldsymbol{x} \neq \boldsymbol{0}$$ exist. In other words, when the combination of columns of A can't produce the identity matrix.  
+The matrix L is a lower triangular matrix with 1's in diagonal, and U is an upper triangular matrix.  
+
+However, there are times when there is no matrix that can be inversible. It is when $$A\boldsymbol{x}=\boldsymbol{0}, \boldsymbol{x} \neq \boldsymbol{0}$$ exist. This happens during the process of row operation when EA doesn't return I but returns a matrix with one or more zero-rows due to some rows that can be eliminated fully by combination of other rows. In other words, when the rows are not independent. This applies same when the columns are not independet as well, since the transpose is also singular.  
 
 $$
 \begin{aligned}
@@ -382,7 +390,7 @@ We can see that the difference btw the null space and the column space is that,
 
 Repeating, the null space is **not** the linear combination of columns but the solution which is a line in this case.  
 
-How do we find the solution? The easiest way is to execute *elimination*.  
+How do we find the special solution? The easiest way is to execute *elimination*.  
 
 $$
 \begin{aligned}
@@ -411,6 +419,11 @@ $$
 $$  
 
 **To summarize, a null space is a combination of special solutions. And the number of solutions (nonzero vector) is equal to the number of free variables; dimension - # pivot variables; n-r.**  
+
++ Bonus  
+  When the number of free variables is nonzero, it means there is a solution to $$A\boldsymbol{x}=\boldsymbol{0},\boldsymbol{x} \neq 0$$. This means the matrix A is not invertible; **singular**.  
+
+
 
 ### Coming back to column space
 Since we obtained the complete solution for Ax=0, let us try Ax=b.  
@@ -570,4 +583,33 @@ $$
 \begin{aligned}
     dim(N(A^T))=\#\ of\ free\ rows\ of\ R\ or\ A=m-r
 \end{aligned}
+$$  
+
+These 4 subspaces are going to be essential to understand the linear relation btw solutions and matrices in next further steps.  
+
+![4 subspaces](../images/fund_subspaces.jpeg)
+
+<!-- ### Matrix Space
+Just like vector spaces, matrices also have vector spaces. Let us say there is a space M = all 3 by 3 matrices. The subspaces of M would be,  
+
 $$
+\begin{aligned}
+    S_{3\times 3}\\
+    U_{3 \times 3}\\
+    D_{3\times 3}
+\end{aligned}
+$$  
+
+and the basis of M would be,  
+
+$$
+\begin{aligned}
+    &\begin{bmatrix}
+        1&0&0\\0&0&0\\0&0&0
+    \end{bmatrix}, \cdots ,\begin{bmatrix}
+        0&0&0\\0&0&0\\0&0&1
+    \end{bmatrix}\\
+    &dim(M)=9
+\end{aligned}
+$$  
+ -->
