@@ -16,9 +16,7 @@ The note is based on a [MIT open course](https://www.youtube.com/playlist?list=P
 # Projections
 
 ### Intro to Projections
-![projection](https://www.researchgate.net/profile/Fernando-Sciascio/publication/220103928/figure/fig2/AS:349421448515593@1460319973418/Example-of-a-projection-of-a-matrix-3-2-on-the-column-space.png)  
-
-As we know, there are times when $$Q\boldsymbol{x}=\boldsymbol{p}$$ have no solution because the matrix A is very rarely full rank. In this case, we must find the best solution. One of the best solution to this problem is to project p to the column space of Q because that is the only when the solution exists. 
+As we know, there are times when $$A\boldsymbol{x}=\boldsymbol{b}$$ have no solution because the matrix A is very rarely full rank. In this case, we must find the best solution. One of the best solution to this problem is to project p to the column space of Q because that is the only when the solution exists. 
 
 ![plane projection](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmuEuiU3Ys0WWeTbgeoz78B8eSIm9P0CUKUUlUsWXKn1Ww2kPtMyfENXufkisfeTuTTlQ&usqp=CAU)  
 
@@ -40,9 +38,59 @@ There are few important properties we need to know about the projection matrix.
 
 $$
 \begin{aligned}
-    P\boldsymbol{b}=C(P)
+    &P\boldsymbol{b}=C(P)\\
+    &P^T = P\\
+    &P^2 = P
 \end{aligned}
+$$  
+
+![projection](https://www.researchgate.net/profile/Fernando-Sciascio/publication/220103928/figure/fig2/AS:349421448515593@1460319973418/Example-of-a-projection-of-a-matrix-3-2-on-the-column-space.png)  
+
+Noticing that the projected vector p is a vector that is in the column space of P is very important. And the difference between the vector and the projected one is called; **error** in letter, e. The error vector is always perpendicular to the column space of P. Let us use the figure above to understand why.  
+
 $$
+\begin{aligned}
+    &\boldsymbol{e} = \boldsymbol{\hat{p}}-\boldsymbol{p}\\
+    &\boldsymbol{q_1}^T(\boldsymbol{\hat{p}}-\boldsymbol{p})=\boldsymbol{0}\\
+    &\boldsymbol{q_2}^T(\boldsymbol{\hat{p}}-\boldsymbol{p})=\boldsymbol{0}\\
+    &\leftrightarrow\\
+    &\begin{bmatrix}
+        \boldsymbol{q_1}^T\\\boldsymbol{q_2}^T
+    \end{bmatrix}(\boldsymbol{\hat{p}}-\boldsymbol{p})=Q^T\boldsymbol{e}=\boldsymbol{0}\\
+    &\boldsymbol{e} \in N(Q^T)\leftrightarrow\boldsymbol{e} \perp C(Q)
+\end{aligned}
+$$  
+
+So, the relation between the matrix A and the target vector b is like below.  
+
+![relation btw P&b](https://t1.daumcdn.net/cfile/tistory/250CCF3D58D921E920)
+
+Since we know what the properties of the projection matrix has, let us define in a higher dimension.  
+
+$$
+\begin{aligned}
+    &A^TA\boldsymbol{\hat{x}}=A^T\boldsymbol{b}\\
+    &\boldsymbol{\hat{x}}=(A^TA)^{-1}A^T\boldsymbol{b}\\
+    &\boldsymbol{p} = A\boldsymbol{\hat{x}}=A(A^TA)^{-1}A^T\boldsymbol{b}\\
+    &P=A(A^TA)^{-1}A^T
+\end{aligned}
+$$  
+
+Recall from the previous post, when I was explaining why we need transpose. Transpose are mostly used to create a symmetric matrix and this is one of the most common problems where it is used.  
+
+But is $$A^TA$$ always invertible? We need to remind ourselves that A is not a square invertible matrix or else it would already have a solution that exist. We wouldn't have to go through all this complicated process. The problem for Ax is that there are just too many equations that there are "noise" which also means there are too many rows in A. So, if A doesn't have a full row rank, what about the column rank? Let us say that A has independent columns,  
+
+$$
+\begin{aligned}
+    &A^TA\boldsymbol{x}=\boldsymbol{0}\\
+    &\boldsymbol{x}^TA^TA\boldsymbol{x}=(A\boldsymbol{x})^T(A\boldsymbol{x})=0\\
+    &||A\boldsymbol{x}||^2=0\\
+    &A\boldsymbol{x}=\boldsymbol{0}, x=\boldsymbol{0}\\
+    &\therefore A^TA\boldsymbol{x}=\boldsymbol{0}, x=\boldsymbol{0}\\
+\end{aligned}
+$$  
+
+we made sure in the previous post that when a matrix A has full column rank (r=n), x must be a zero vector. So, $$A^TA$$ also has no free columns just the pivots which proves that it is invertible.  
 
 # Orthogonality  
 
