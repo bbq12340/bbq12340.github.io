@@ -11,7 +11,8 @@ The note is based on a [MIT open course](https://www.youtube.com/playlist?list=P
 2. Spaces
 3. Projections
 4. Orthogonality
-5. Eigenvalues & Eigenvectors
+5. Determinants
+6. Eigenvalues & Eigenvectors
 
 # Matrices
 ### Intro to Matrices

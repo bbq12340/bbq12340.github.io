@@ -11,7 +11,8 @@ The note is based on a [MIT open course](https://www.youtube.com/playlist?list=P
 2. Spaces
 3. Projections
 4. Orthogonality
-5. Eigenvalues & Eigenvectors  
+5. Determinants
+6. Eigenvalues & Eigenvectors  
 
 # Projections
 
@@ -148,4 +149,71 @@ $$
 \end{aligned}
 $$  
 
+Think of the projection matrix. If the matrix A has orthonormal columns, the equation becomes a lot more eaiser.  
+
+$$
+\begin{aligned}
+    &A=\begin{bmatrix}
+        q_1&q_2&\cdots& q_n
+    \end{bmatrix}\\
+    &P = A(A^TA)^{-1}A^T
+    = AA^T\\
+    &A^TA\hat{x}=A^Tb \leftrightarrow \hat{x}_i=q_i^Tb
+\end{aligned}
+$$  
+
+**Gram-Schmidt** is a very useful way to make these matrices.  
+
 ### Gram-Schmidt
+The goal of Elimination was to try and make a triangular matrices because we need them for figuring out solutions i.e. pivots; ranks. The goal of Gram-Schmidt is to make orthogonal matrices.  
+
+The first step is to make two orthogonal vectors and then make them into unit vectors.  
+
+$$
+\begin{aligned}
+    &two\ independent\ vectors\ a_1, a_2\\
+    &u_1=a_1\\
+    &u_2=a_2-\frac{a_1a_1^T}{a_1^Ta_1}a_2\\
+    &u_1^Tu_2=0\\
+    &q_1=\frac{u_1}{||u_1||},q_2=\frac{u_2}{||u_2||}
+\end{aligned}
+$$  
+
+$$
+\begin{aligned}
+    &three\ independent\ vectors\ a_1,a_2,a_3\\
+    &u_1=a_1\\
+    &u_2=a_2-\frac{a_1a_1^T}{a_1^Ta_1}a_2\\
+    &u_3=a_3-\frac{a_2a_2^T}{a_2^Ta_2}a_3-\frac{a_1a_1^T}{a_1^Ta_1}a_3\\
+    &u_3 \perp a_2, u_3 \perp a_1\\
+    &!\ u_2\ not\ perpedicular\ to\ a_3
+\end{aligned}
+$$  
+
+Therefore, the process of making orthonormal vectors is just a combination of the column vectors. So the matrix that has column a and b has the same column space with the orthogonal matrix.  
+
+$$
+\begin{aligned}
+    &A?=Q\\
+    &\begin{bmatrix}
+        a_1&a_2&\cdots&a_n
+    \end{bmatrix}\begin{bmatrix}
+        & \ & \\ & ? & \ \\ \ & \ \\
+    \end{bmatrix}=\begin{bmatrix}
+        q_1&q_2&\cdots&q_n
+    \end{bmatrix}\\
+    &\leftrightarrow\\
+    &Q^{-1}A=Q^TA=\begin{bmatrix}
+        q_1^T\\q_2^T\\ \vdots \\ q_n^T
+    \end{bmatrix}\begin{bmatrix}
+        a_1&a_2&\cdots&a_n
+    \end{bmatrix}=\begin{bmatrix}
+        q_1^Ta_1&q_1^Ta_2&\cdots&q_1^Ta_n\\
+        0&\ddots&\ &\vdots\\
+        \vdots&\ &\ddots&\vdots\\
+        0&\cdots&\cdots&q_n^Ta_n\\
+    \end{bmatrix}\\
+    &\therefore A=QR\\
+    &R: upper\ triangular\ matrix
+\end{aligned}
+$$
