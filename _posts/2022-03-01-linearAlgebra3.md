@@ -300,7 +300,7 @@ $$
 \end{aligned}
 $$  
 
-Since the eigenvectors are perpendicular to each other, it would be very nice if it was orthonormal as well. This will be covered later.  
+This is called **diagonalization**; factoring the matrix A into eigenvectors units. Additionally, ince the eigenvectors are perpendicular to each other, it would be very nice if it was orthonormal as well. This will be covered shortly later.  
 
 This factorization gives us a good sense of what powers of matrix is.  
 
@@ -312,7 +312,117 @@ $$
 \end{aligned}
 $$  
 
-### Differential & Matrix Exponential
+### Differential Equation & Matrix Exponential
+#### Differential Equation
+A differential equation is a mathematical equation for an unknown function of one or several variables that relates the values of the function itself and of its derivatives of various orders. A matrix differential equation contains more than one function stacked into vector form with a matrix relating the functions to their derivatives. Let say, for example we're to find what u(t) is.  
+
+$$
+\begin{aligned}
+    &\frac{du_1}{dt}=-u_1+2u_2\\
+    &\frac{du_2}{dt}=u_1-2u_2\\
+    &given\ u(0)=\begin{bmatrix}
+        1\\0
+    \end{bmatrix}\\
+    \rightarrow&\frac{du}{dt}=\begin{bmatrix}
+        -1&2\\1&-2
+    \end{bmatrix}u=Au
+\end{aligned}
+$$  
+
+The solution for the u(t) is as below,
+
+$$
+\begin{aligned}
+    solution: u(t)=c_1e^{\lambda_1t}x_1+c_2e^{\lambda_2t}x_2
+\end{aligned}
+$$  
+
+An additional comment about what u(t) is: it is a nx1 vector of functions of an underlying t.  
+
+So, we need to find what the eigenvalues and the eigenvectors are. Luckily, we see that the matrix A is singular, so the eigenvalues are very simple. Once we attain them, we can input the given t and attain the unknown scalars.  
+
+$$
+\begin{aligned}
+    &\lambda=0,3\\
+    &x_1=\begin{bmatrix}
+        2\\1
+    \end{bmatrix},x_2=\begin{bmatrix}
+        1\\-1
+    \end{bmatrix}\\
+    &u(0)=\begin{bmatrix}
+        2&1\\1&-1
+    \end{bmatrix}\begin{bmatrix}
+        c_1\\c_2
+    \end{bmatrix}=Sc=\begin{bmatrix}
+        1\\0
+    \end{bmatrix}\\
+    &u(t)=\frac{1}{3}\begin{bmatrix}
+        2\\1
+    \end{bmatrix}+\frac{1}{3}e^{-3t}\begin{bmatrix}
+        1\\-1
+    \end{bmatrix}
+\end{aligned}
+$$  
+
+Something we can notice about this vector of functions is that it is a steady state. When t is approaching infitnite, the vector is always in the same direction.  
+
+$$
+\begin{aligned}
+    u(\infin)=\frac{1}{3}\begin{bmatrix}
+        2\\1
+    \end{bmatrix}
+\end{aligned}
+$$  
+
+There are three types of stability in total: zero vector, steady, blow-up.  
+
+$$
+\begin{aligned}
+    &u(t) \rightarrow 0: all \lambda<0, \lambda \in C \cup Re\\
+    &u(t) \rightarrow cv: \lambda\leq0, \lambda \in Re\\
+    &u(t) \rightarrow \infin: any\ \lambda>0, \lambda \in Re\\
+\end{aligned}
+$$  
+
+Coming back to the solution, we're going to write the equation in the matrix S and lambda. Currently, the vector u is coupled with A, we will uncouple (diagonalizing) it to see a better picture. The whole point of eigenvectors is to uncouple a matrix.  
+
+
+$$
+\begin{aligned}
+    &\frac{du}{dt}=Au\\
+    &u=Sv, S:eigenvectors\ of\ A\\
+    &S\frac{dv}{dt}=ASv\\
+    &\frac{dv}{dt}=S^{-1}ASv=\Lambda v\\
+    &notation:v(t)=e^{\Lambda t}v(0)\\
+    &(\because\frac{dv_1}{dt}=\lambda_1v_1)\\
+    &\therefore u(t)=Se^{\Lambda t}S^{-1}u(0)\\
+\end{aligned}
+$$
+
+
+#### Matrix Exponential
+What does matrix exponential mean? Let us look how it was formed. Coming back to the differential equation solution above,  
+
+$$
+\begin{aligned}
+    &u(t)=Se^{\Lambda t}S^{-1}u(0)\\
+    &e^{At}=Se^{\Lambda t}S^{-1}\\
+    &since,\\
+    &e^{At}=I+At+\frac{(At)^2}{2!}+\frac{(At)^3}{3!}+\cdots+\frac{(At)^n}{n!}+\cdots\\
+    &(\because taylor\ theorem)\\
+    &\therefore e^{At}=I+\frac{Se^{\Lambda t}S^{-1}}{2}t^2+\frac{Se^{\Lambda t}S^{-1}}{6}t^3+\cdots\\
+    &=S(I+\Lambda t +\frac{\Lambda^2}{2}t^2+\cdots)S^{-1}=Se^{\Lambda t}S^{-1}
+\end{aligned}
+$$  
+
+Now, does this work the whole time? **Assumption: A can be diagonalized** which means that A has to be one of the "good" matrices. To conclude, how do we express the matrix exponential?  
+
+$$
+\begin{aligned}
+    \Lambda&=diag(\lambda_i)\\
+    e^{\Lambda t}&=diag(e^{\lambda_it})
+\end{aligned}
+$$
 
 ### Symmetric Matrices & Positive Definite Matrices
 One of the "bad" matrices is when a matrix has complex eigenvalues. The symmetric matrices only have real eigenvalues. Another reason why these matrices are special is because the eigenvectors are orthonormal. So, this will be our definition of "good" matrices and we'll learn how to use them.  
@@ -347,3 +457,122 @@ $$
 $$  
 
 Symmetric matrices with positive eigenvalues; **Positive Definite Symmetric Matrices** have positive pivots. This also means, all its subdeterminants are positive, so, we don't have to think about the sign of cofactors.  
+
+But how doe we know that a matrix is a positive definite? There are four tests in total.  
+
+1. eigenvalues > 0  
+2. determinant > 0  
+3. pivots > 0  
+4. $$x^TAx > 0, x \neq 0$$  
+
+Any of them is fine, but the 4th is the most important. The rest is good but not the best. Let us think of an example.  
+
+$$
+\begin{aligned}
+    &given\ A=\begin{bmatrix}
+        2&6\\6&20
+    \end{bmatrix},\\
+   &x^TAx=2x_1^2+20x_2^2+12x_1x_2 > 0
+\end{aligned}
+$$  
+
+The equation above is a **quadratic form**. We need to figure out whether the form is positive or not.  
+
+$$
+\begin{aligned}
+    &x^TAx=2x_1^2+20x_2^2+12x_1x_2\\
+    &=2(x_1+3x_2)^2+2x_2^2>0\cdots(1)\\
+    &\begin{bmatrix}
+        2&6\\6&20
+    \end{bmatrix}\rightarrow\begin{bmatrix}
+        2&6\\0&2
+    \end{bmatrix}\rightarrow\begin{bmatrix}
+        2\sdot1&2\sdot3\\0&2
+    \end{bmatrix}\cdots(2)
+\end{aligned}
+$$  
+
+The form (1) certains that the form is above zero. This can be attained easily if we implement elimination. When this quadratic surface is shown in geometry in higher dimension, it will mostly look like below. In this case, would be the elliptic paraboloid.  
+
+![quadratic surface](https://d3rw207pwvlq3a.cloudfront.net/attachments/000/202/653/original/image.png?1634149643)  
+
+How can we generate positive definited matrices? This when the quadratic form shines. Given m by n matrix with full column rank; no null space,  
+
+$$
+\begin{aligned}
+    &A^TA: pos.\ def\\
+    &x^T(A^TA)x=||Ax||^2>0
+\end{aligned}
+$$  
+
+### Similar Matrices
+When we say two matrices such as A and B are similar, it means that B can express A like below,  
+
+$$
+\begin{aligned}
+    B=M^{-1}AM
+\end{aligned}
+$$  
+
+An easiest example of this would be the diagonlization.  
+
+$$
+\begin{aligned}
+    S^{-1}AS=\Lambda
+\end{aligned}
+$$  
+
+Why would we call A and B similar? It is because their eigenvalues are the same, but not the eigenvectors.  
+
+$$
+\begin{aligned}
+    &Ax=\lambda x\\
+    &M^{-1}AMM^{-1}x=\lambda M^{-1}x\\
+    &BM^{-1}x=\lambda M^{-1}x
+\end{aligned}
+$$  
+
+### Singular Value Decomposition  
+Now, this part is where we bring everything we've learned. Any matrix A that can be decomposed into three matrices. Something we have to remind ourselves,  
+
+$$
+\begin{aligned}
+    A=S\Lambda S^{-1}\\
+    A=Q\Lambda Q^T
+\end{aligned}
+$$  
+
+When the matrix A is a positive definite matrix, the ordinary S becomes orthogonal and the ordinary lambda becomes positive. How do we factor an ordinary matrix A into orthogonal and diagonal matrices?  
+
+Since we know that the matrix is a linear mapping of vectors from a row space to a column space, or in another direction, we now understand the expression below,  
+
+$$
+\begin{aligned}
+    &A_{m\times n}:R^m\rightarrow R^n\\
+    &v \in C(A^T), u \in C(A)\\
+    &v_i \perp v_j, u_i \perp u_j, ||v||,||u||=1\\
+    &cu=Av\\
+    &A\begin{bmatrix}
+        v_1&v_2&\cdots&v_r
+    \end{bmatrix}=\begin{bmatrix}
+        \sigma_1u_1&\sigma_2u_2&\cdots&\sigma_nu_r
+    \end{bmatrix}\\
+    &=\begin{bmatrix}
+        u_1&u_2&\cdots&u_r
+    \end{bmatrix}\begin{bmatrix}
+        \sigma_1& \ & \\\ \ & \ddots & \\\ \ & \ & \sigma_r
+    \end{bmatrix}(rank(A)=r)\\
+    &\therefore A=U\Sigma V^T
+\end{aligned}
+$$  
+
+However, this is quite difficult to find since we have to find orthogonal bases in the rowspace that is also orthogonal in the column space after its mapping. We can find each of the bases if we understand the equation below.  
+
+$$
+\begin{aligned}
+    &A^TA=V\Sigma^T\Sigma V^T\\
+    &AA^T=U\Sigma^T\Sigma U^T\\
+\end{aligned}
+$$  
+
+We can see that the matrices V & U are the eigenvector matrices of each of the positive symmetric matrix.
